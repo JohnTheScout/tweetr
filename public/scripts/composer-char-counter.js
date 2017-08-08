@@ -4,5 +4,5 @@ $(document).ready(function () {
 });
 
 function updateCount() {
-  console.log($(this).val().length);
+  $(this).siblings('.counter')[0].textContent = 140 - $(this).val().length;
 }
