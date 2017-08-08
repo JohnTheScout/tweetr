@@ -24,3 +24,11 @@
 .new-tweet .counter {
   float: right;
 }
+
+.yellow {
+  color: yellow;
+}
+
+.red {
+  color: red;
+}
