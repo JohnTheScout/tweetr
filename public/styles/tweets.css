@@ -19,6 +19,7 @@
 .tweets footer {
   border-top: 1px solid lightgrey;
   padding: 5px;
+  font-size: smaller;
 }
 
 .tweets p {
@@ -27,6 +28,7 @@
 
 .userimage {
   border-radius: 5px;
+  border: 1px solid black;
   overflow: hidden;
   margin: auto auto;
 }
