@@ -1,3 +1,8 @@
-module.exports = function() {
-  console.log("In CCC function");
+$(document).ready(function () {
+  $(".new-tweet textarea").on("keydown", updateCount);
+  $(".new-tweet textarea").on("keyup", updateCount);
+});
+
+function updateCount() {
+  console.log($(this).val().length);
 }
