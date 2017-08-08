@@ -45,7 +45,7 @@ function createTweetElement(tweet) {
 }
 
 function renderTweets(tweetArr) {
-  tweetsDOMElement = $('.tweets');
+  tweetsDOMElement = $('.tweets'); //cache the lookup so we're not repeating it for each tweet
   tweetArr.forEach((tweet) => {
     tweetsDOMElement.append(createTweetElement(tweet));
   });
@@ -59,13 +59,19 @@ function escape(str) {
 
 function submitHandler(event) {
   event.preventDefault();
-  console.log($(this)[0][0].value);
+  let len = $(this)[0][0].value.length; //gets the length of the value in the text box
   let serialized = $(this).serialize();
-  $.ajax({
-    url: "/tweets",
-    type: "POST",
-    data: serialized,
-  });
+  if (len > 140) {
+    alert("Tweet too long!");
+  } else if (len > 0) {
+    $.ajax({
+      url: "/tweets",
+      type: "POST",
+      data: serialized,
+    });
+  } else {
+    alert("Tweet should not be empty");
+  }
 }
 
 function loadTweets() {
