@@ -46,6 +46,7 @@ function createTweetElement(tweet) {
 
 function renderTweets(tweetArr) {
   tweetsDOMElement = $('.tweets'); //cache the lookup so we're not repeating it for each tweet
+  tweetsDOMElement.html(""); // clear HTML to prevent tweets that have already been displayed from being added twice
   tweetArr.forEach((tweet) => {
     tweetsDOMElement.append(createTweetElement(tweet));
   });
@@ -68,6 +69,7 @@ function submitHandler(event) {
       url: "/tweets",
       type: "POST",
       data: serialized,
+      success: loadTweets,
     });
   } else {
     alert("Tweet should not be empty");
