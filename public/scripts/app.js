@@ -46,7 +46,7 @@ function createTweetElement(tweet) {
 
 function renderTweets(tweetArr) {
   tweetsDOMElement = $('.tweets'); //cache the lookup so we're not repeating it for each tweet
-  tweetsDOMElement.html(""); // clear HTML to prevent tweets that have already been displayed from being added twice
+  tweetsDOMElement.html(''); // clear HTML to prevent tweets that have already been displayed from being added twice
   tweetArr.forEach((tweet) => {
     tweetsDOMElement.append(createTweetElement(tweet));
   });
@@ -60,31 +60,38 @@ function escape(str) {
 
 function submitHandler(event) {
   event.preventDefault();
-  let len = $(this)[0][0].value.length; //gets the length of the value in the text box
+  let innerValue = $(this)[0][0].value; //gets the length of the value in the text box
   let serialized = $(this).serialize();
-  if (len > 140) {
-    alert("Tweet too long!");
-  } else if (len > 0) {
+  if (innerValue.length > 140) {
+    alert('Tweet too long!');
+  } else if (innerValue.length > 0) { // length is not 0 and is less than 140, successful request can be made
     $.ajax({
-      url: "/tweets",
-      type: "POST",
+      url: '/tweets',
+      type: 'POST',
       data: serialized,
       success: loadTweets,
     });
+    innerValue.val('');
   } else {
     alert("Tweet should not be empty");
   }
 }
 
+function composeButtonHandler() {
+  $('.new-tweet').slideToggle(300, 'linear');
+  $('.new-tweet textarea').focus();
+}
+
 function loadTweets() {
   $.ajax({
-    url: "/tweets",
-    type: "GET",
+    url: '/tweets',
+    type: 'GET',
     success: renderTweets,
   });
 }
 
 $(document).ready(() => {
   $('form').on('submit', submitHandler);
+  $('.compose').on('click', composeButtonHandler);
   loadTweets();
 });
