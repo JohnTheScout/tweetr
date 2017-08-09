@@ -71,6 +71,8 @@ function loadTweets() {
     type: 'GET',
     success: renderTweets,
   });
+  $('textarea').val('');
+  $('.counter').text('140');
 }
 
 function submitHandler(event) {
@@ -86,7 +88,6 @@ function submitHandler(event) {
       data: serialized,
       success: loadTweets,
     });
-    $('textarea').val('');
   } else {
     alert('Tweet should not be empty');
   }
