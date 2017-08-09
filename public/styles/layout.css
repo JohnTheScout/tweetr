@@ -29,7 +29,8 @@ body {
 }
 
 .container {
-  margin: 140px auto 0px;
+  margin: 80px auto 0px;
+  padding-top: 1px;
   width: 450px;
   background-color: white;
 }
