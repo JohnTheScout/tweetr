@@ -60,18 +60,18 @@ function escape(str) {
 
 function submitHandler(event) {
   event.preventDefault();
-  let innerValue = $(this)[0][0].value; //gets the length of the value in the text box
+  let len = $(this)[0][0].value.length; //gets the length of the value in the text box
   let serialized = $(this).serialize();
-  if (innerValue.length > 140) {
+  if (len > 140) {
     alert('Tweet too long!');
-  } else if (innerValue.length > 0) { // length is not 0 and is less than 140, successful request can be made
+  } else if (len > 0) {
     $.ajax({
       url: '/tweets',
       type: 'POST',
       data: serialized,
       success: loadTweets,
     });
-    innerValue.val('');
+    $("textarea").val('');
   } else {
     alert("Tweet should not be empty");
   }
