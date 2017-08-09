@@ -41,3 +41,12 @@
 .tweets article:hover {
   opacity: 1;
 }
+
+.icons {
+  float: right;
+  visibility: hidden;
+}
+
+.tweets article:hover .icons {
+  visibility: visible;
+}

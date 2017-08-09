@@ -17,7 +17,7 @@ function millisecondsToMinutes(timeInMilli) {
   let result = "";
 
   if (days > 0) {
-    result = `Posted ${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds ago`;
+    result = `Posted ${days} days ago`;
   } else if (hours > 0) {
     result = `Posted ${hours} hours, ${minutes} minutes and ${seconds} seconds ago`;
   } else if (minutes > 0) {
@@ -33,12 +33,19 @@ function createTweetElement(tweet) {
   let $tweet = $(`
     <article>
       <header>
-        <div class="userimage"><img src="${tweet.user.avatars.small}"></div>
+        <div class='userimage'><img src='${tweet.user.avatars.small}'></div>
         <h2>${escape(tweet.user.name)}</h2>
         <p>${escape(tweet.user.handle)}</p>
       </header>
       <p>${escape(tweet.content.text)}</p>
-      <footer>${millisecondsToMinutes(tweet.created_at)}</footer>
+      <footer>
+        ${millisecondsToMinutes(tweet.created_at)}
+        <span class='icons'>
+          <img src='/images/iconmonstr-flag-4.svg'>
+          <img src='/images/iconmonstr-media-control-54.svg'>
+          <img src='/images/iconmonstr-favorite-2.svg'>
+        </span>
+      </footer>
     </article>
     `);
   return $tweet;
