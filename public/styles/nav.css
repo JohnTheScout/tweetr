@@ -25,7 +25,20 @@
 #nav-bar .compose {
   float: right;
   margin: 10px 0px;
+  padding: 0px 10px;
   font-size: 200%;
   line-height: 175%;
   border: 1px solid black;
+  border-radius: 5px;
+  color: #00a087;
+  background-color: #e7fdff;
+}
+
+#nav-bar .compose:hover {
+  font-size: 200%;
+  line-height: 175%;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+  background-color: white;
 }
