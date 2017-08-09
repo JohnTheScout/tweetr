@@ -21,3 +21,11 @@
   line-height: 250%;
   font-size: 200%;
 }
+
+#nav-bar .compose {
+  float: right;
+  margin: 10px 0px;
+  font-size: 200%;
+  line-height: 175%;
+  border: 1px solid black;
+}
