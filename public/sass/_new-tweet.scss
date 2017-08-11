@@ -1,0 +1,35 @@
+.new-tweet {
+  margin: 10px 2em;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: lightgrey;
+
+  h2 {
+    border-bottom: 2px solid black;
+    margin: 5px;
+  }
+  
+  form {
+    width: 100%;
+  }
+  
+  textarea {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0px;
+    resize: none;
+  }
+  
+  .counter {
+    float: right;
+  }
+}
+
+.yellow {
+  color: yellow;
+}
+
+.red {
+  color: red;
+}

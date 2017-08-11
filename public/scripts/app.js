@@ -49,7 +49,7 @@ function createTweetElement(tweet) {
         <span class='icons'>
           <img src='/images/iconmonstr-flag-4.svg'>
           <img src='/images/iconmonstr-media-control-54.svg'>
-          <img src='/images/iconmonstr-favorite-2.svg'>
+          <span class='heart' data-liked=false><img src='/images/iconmonstr-favorite-2.svg'></span>
         </span>
       </footer>
     </article>
@@ -98,8 +98,20 @@ function composeButtonHandler() {
   $('.new-tweet textarea').focus();
 }
 
+function likeHandler() {
+  const $heartIcon = $(this);
+  if ($heartIcon.data().liked === true) {
+    $heartIcon.data().liked = false;
+    $heartIcon.html(`<img src='/images/iconmonstr-favorite-2.svg'>`);
+  } else {
+    $heartIcon.data().liked = true;
+    $heartIcon.html(`<img src='/images/iconmonstr-favorite-1.svg'>`);
+  }
+}
+
 $(document).ready(() => {
+  loadTweets();
   $('form').on('submit', submitHandler);
   $('.compose').on('click', composeButtonHandler);
-  loadTweets();
+  $('.tweets').on('click', '.heart', likeHandler);
 });

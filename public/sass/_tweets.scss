@@ -1,0 +1,52 @@
+.tweets {
+  margin: 0px 2em;
+  word-wrap: break-word;
+
+  article {
+    border-radius: 5px;
+    border: 1px solid black;
+    overflow: hidden;
+    margin: 10px auto;
+    opacity: 0.75;
+  }
+
+  article:hover {
+    opacity: 1;
+
+    .icons {
+      visibility: visible;
+    }
+  }
+  
+  header {
+    background: #f3f3f3;
+    display: grid;
+    grid-template-columns: 80px 1fr 120px;
+  }
+  
+  footer {
+    border-top: 1px solid lightgrey;
+    padding: 5px;
+    font-size: smaller;
+  }
+  
+  p {
+    padding: 5px;
+  }
+}
+
+.userimage {
+  border-radius: 5px;
+  border: 1px solid black;
+  overflow: hidden;
+  margin: auto auto;
+
+  img {
+    vertical-align: top;
+  }
+}
+
+.icons {
+  float: right;
+  visibility: hidden;
+}

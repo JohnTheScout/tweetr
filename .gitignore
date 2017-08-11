@@ -3,3 +3,5 @@ node_modules/
 .DS_Store
 mongo-example.js
 .eslintrc.js
+.sass-cache
+*.map

@@ -1,0 +1,47 @@
+$colorGreen: #00a087;
+$colorGrey: #e8fdff;
+
+#nav-bar {
+  height: 80px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0em 2em;
+  color: $colorGrey;
+  background-color: $colorGreen;
+  z-index: 1;
+
+  .logo {
+    width: 80px;
+    height: 80px;
+    float: left;
+  }
+
+  .header {
+    float: left;
+    margin: 0px 10px;
+    line-height: 250%;
+    font-size: 200%;
+  }
+
+  .compose {
+    float: right;
+    margin: 10px 0px;
+    padding: 0px 10px;
+    font-size: 200%;
+    line-height: 175%;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: $colorGreen;
+    background-color: $colorGrey;
+  }
+
+  .compose:hover {
+    color: black;
+    background-color: white;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+}
