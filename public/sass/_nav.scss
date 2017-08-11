@@ -34,6 +34,11 @@ $colorGrey: #e8fdff;
     border-radius: 5px;
     color: $colorGreen;
     background-color: $colorGrey;
+
+    @media (max-width: 300px) {
+      font-size: 20px;
+      padding-top: 10px;
+    }
   }
 
   .compose:hover {
