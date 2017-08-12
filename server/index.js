@@ -4,7 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 
-const PORT = 8080;
+const PORT = 9898;
 const MONGODB_URI = 'mongodb://localhost:27017/tweetr';
 const app = express();
 
@@ -23,7 +23,7 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   // Mount the tweets routes at the '/tweets' path prefix:
   app.use('/tweets', tweetsRoutes);
 
-  app.listen(PORT, () => {
-    console.log(`Example app listening on port ${PORT}`);
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Tweeter chirping away on port ${PORT}`);
   });
 });
