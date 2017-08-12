@@ -102,10 +102,10 @@ function likeHandler() {
   const $heartIcon = $(this);
   if ($heartIcon.data().liked === true) {
     $heartIcon.data().liked = false;
-    $heartIcon.html('<img src=\'/images/iconmonstr-favorite-2.svg\'>');
+    $heartIcon.html('<img src="/images/iconmonstr-favorite-2.svg">');
   } else {
     $heartIcon.data().liked = true;
-    $heartIcon.html('<img src=\'/images/iconmonstr-favorite-1.svg\'>');
+    $heartIcon.html('<img src="/images/iconmonstr-favorite-1.svg">');
   }
 }
 
